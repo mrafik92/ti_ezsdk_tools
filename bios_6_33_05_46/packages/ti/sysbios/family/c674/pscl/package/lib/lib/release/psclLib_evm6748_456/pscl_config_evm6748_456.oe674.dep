@@ -1,0 +1,9 @@
+package/lib/lib/release/psclLib_evm6748_456/pscl_config_evm6748_456.oe674: pscl_config_evm6748_456.c /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/dsp-devkit/cgt6x_7_3_1/include/stdlib.h ../../../../../ti/sysbios/family/c674/pmi.h _pscl.h /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/dsp-devkit/cgt6x_7_3_1/include/linkage.h ../../../../../ti/sysbios/family/c674/pmi/pmi_defs6748.h ../../../../../ti/sysbios/family/c674/pscl.h pscl_clkcfg.h 
+pscl_config_evm6748_456.c:
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/dsp-devkit/cgt6x_7_3_1/include/stdlib.h:
+../../../../../ti/sysbios/family/c674/pmi.h:
+_pscl.h:
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/dsp-devkit/cgt6x_7_3_1/include/linkage.h:
+../../../../../ti/sysbios/family/c674/pmi/pmi_defs6748.h:
+../../../../../ti/sysbios/family/c674/pscl.h:
+pscl_clkcfg.h:

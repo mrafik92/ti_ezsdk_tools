@@ -1,0 +1,8 @@
+package/lib/lib/release/ti.sysbios.fatfs/diskio.oem3: diskio.c /proj/productization/tools/cgt470/cgt470_4_9_2/include/stdio.h ./ffconf.h ./diskio.h /proj/productization/tools/cgt470/cgt470_4_9_2/include/linkage.h /proj/productization/tools/cgt470/cgt470_4_9_2/include/stdarg.h ./integer.h 
+diskio.c:
+/proj/productization/tools/cgt470/cgt470_4_9_2/include/stdio.h:
+./ffconf.h:
+./diskio.h:
+/proj/productization/tools/cgt470/cgt470_4_9_2/include/linkage.h:
+/proj/productization/tools/cgt470/cgt470_4_9_2/include/stdarg.h:
+./integer.h:

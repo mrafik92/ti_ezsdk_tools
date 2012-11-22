@@ -1,0 +1,15 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+[Project Settings]
+ProjectName="ti.sysbios.xdcruntime"
+ProjectType=External
+CPUFamily=TMS470R4X
+Tool="CustomBuilder"
+Config="Package"
+[Source Files]
+Source="../package/package_ti.sysbios.xdcruntime.c"
+Source="../GateThreadSupport.c"
+Source="../GateProcessSupport.c"
+Source="../SemThreadSupport.c"
+Source="../SemProcessSupport.c"
+Source="../ThreadSupport.c"
+Source="../CacheSupport.c"

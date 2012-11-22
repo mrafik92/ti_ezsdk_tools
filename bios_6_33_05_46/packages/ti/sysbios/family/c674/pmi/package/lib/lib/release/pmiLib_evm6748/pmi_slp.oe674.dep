@@ -1,0 +1,7 @@
+package/lib/lib/release/pmiLib_evm6748/pmi_slp.oe674: pmi_slp.c /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/dsp-devkit/cgt6x_7_3_1/include/stdlib.h ../../../../../ti/sysbios/family/c674/pmi.h ./pmi_defs6748.h /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/dsp-devkit/cgt6x_7_3_1/include/linkage.h pmi_defs6748.h 
+pmi_slp.c:
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/dsp-devkit/cgt6x_7_3_1/include/stdlib.h:
+../../../../../ti/sysbios/family/c674/pmi.h:
+./pmi_defs6748.h:
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/dsp-devkit/cgt6x_7_3_1/include/linkage.h:
+pmi_defs6748.h:

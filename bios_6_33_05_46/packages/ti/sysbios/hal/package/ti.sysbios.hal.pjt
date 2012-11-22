@@ -1,0 +1,16 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+[Project Settings]
+ProjectName="ti.sysbios.hal"
+ProjectType=External
+CPUFamily=TMS470R4X
+Tool="CustomBuilder"
+Config="Package"
+[Source Files]
+Source="../package/package_ti.sysbios.hal.c"
+Source="../Hwi.c"
+Source="../Hwi_stack.c"
+Source="../Hwi_startup.c"
+Source="../Timer.c"
+Source="../TimerNull.c"
+Source="../Cache.c"
+Source="../CacheNull.c"

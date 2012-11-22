@@ -1,0 +1,135 @@
+clean::
+	$(RM) package/ti.sysbios.family.c64p.sch
+	$(RM) package/.vers_g180
+	$(RM) package/.vers_r170
+	$(RM) package/.vers_b150
+	$(RM) package/.xdc-y25
+	$(RM) package/ti_sysbios_family_c64p.java
+	$(RM) package/ti_sysbios_family_c64p.class
+	$(RM) package/package_ti.sysbios.family.c64p.c
+	$(RM) package/package.defs.h
+	$(RM) EventCombiner.h
+	$(RM) package/internal/EventCombiner.xdc.h
+	$(RM) Exception.h
+	$(RM) package/internal/Exception.xdc.h
+	$(RM) Hwi.h
+	$(RM) package/internal/Hwi.xdc.h
+	$(RM) TimestampProvider.h
+	$(RM) package/internal/TimestampProvider.xdc.h
+	$(RM) MemoryProtect.h
+	$(RM) package/internal/MemoryProtect.xdc.h
+	$(RM) Clobber.h
+	$(RM) package/internal/Clobber.xdc.h
+	$(RM) Cache.h
+	$(RM) package/internal/Cache.xdc.h
+	$(RM) package/ti.sysbios.family.c64p.ccs
+
+.interfaces: package/ti.sysbios.family.c64p.sch package/.vers_g180 package/.vers_r170 package/.vers_b150 package/.xdc-y25 package/ti_sysbios_family_c64p.java package/package_ti.sysbios.family.c64p.c package/package.defs.h EventCombiner.h package/internal/EventCombiner.xdc.h Exception.h package/internal/Exception.xdc.h Hwi.h package/internal/Hwi.xdc.h TimestampProvider.h package/internal/TimestampProvider.xdc.h MemoryProtect.h package/internal/MemoryProtect.xdc.h Clobber.h package/internal/Clobber.xdc.h Cache.h package/internal/Cache.xdc.h package/ti.sysbios.family.c64p.ccs 
+package/package.xdc.inc: package/.vers_g180
+package/.vers_g180:
+package/package.xdc.inc: package/.vers_r170
+package/.vers_r170:
+package/package.xdc.inc: package/.vers_b150
+package/.vers_b150:
+
+.interfaces: EventCombiner.xdc Exception.xdc Hwi.xdc TimestampProvider.xdc MemoryProtect.xdc Clobber.xdc Cache.xdc Settings.xdc 
+
+# schema include file dependencies
+package.xs:
+package/package.xdc.inc: package.xs
+EventCombiner.xs:
+package/package.xdc.inc: EventCombiner.xs
+Exception.xs:
+package/package.xdc.inc: Exception.xs
+Hwi.xs:
+package/package.xdc.inc: Hwi.xs
+TimestampProvider.xs:
+package/package.xdc.inc: TimestampProvider.xs
+MemoryProtect.xs:
+package/package.xdc.inc: MemoryProtect.xs
+Cache.xs:
+package/package.xdc.inc: Cache.xs
+Settings.xs:
+package/package.xdc.inc: Settings.xs
+
+# schema update dependencies
+package/package.xdc.inc: EventCombiner.xdc
+package/package.xdc.inc: Exception.xdc
+package/package.xdc.inc: Hwi.xdc
+package/package.xdc.inc: TimestampProvider.xdc
+package/package.xdc.inc: MemoryProtect.xdc
+package/package.xdc.inc: Clobber.xdc
+package/package.xdc.inc: Cache.xdc
+package/package.xdc.inc: Settings.xdc
+package/package.xdc.inc: xdc/IPackage.xdc
+xdc/IPackage.xdc:
+vpath xdc/IPackage.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/interfaces/IHwi.xdc
+ti/sysbios/interfaces/IHwi.xdc:
+vpath ti/sysbios/interfaces/IHwi.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/interfaces/ITimestamp.xdc
+ti/sysbios/interfaces/ITimestamp.xdc:
+vpath ti/sysbios/interfaces/ITimestamp.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/runtime/ITimestampProvider.xdc
+xdc/runtime/ITimestampProvider.xdc:
+vpath xdc/runtime/ITimestampProvider.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/runtime/ITimestampClient.xdc
+xdc/runtime/ITimestampClient.xdc:
+vpath xdc/runtime/ITimestampClient.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/interfaces/ICache.xdc
+ti/sysbios/interfaces/ICache.xdc:
+vpath ti/sysbios/interfaces/ICache.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/interfaces/ISettings.xdc
+ti/sysbios/interfaces/ISettings.xdc:
+vpath ti/sysbios/interfaces/ISettings.xdc $(XPKGVPATH)
+
+ifneq (clean,$(MAKECMDGOALS))
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/global/java/package.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/global/java/package.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/ecj.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/ecj.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/intern/gen/java/package.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/intern/gen/java/package.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/antlr.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/antlr.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/intern/xsr/java/package.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/intern/xsr/java/package.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/tar.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/tar.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/spec/java/package.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/spec/java/package.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/intern/cmd/java/package.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/intern/cmd/java/package.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/js.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/js.jar
+endif
+# goals for files generated during schema generation but unspecified by schema's pattern rule
+package/package.xdc.inc: EventCombiner.h
+EventCombiner.h:
+package/package.xdc.inc: package/internal/EventCombiner.xdc.h
+package/internal/EventCombiner.xdc.h:
+package/package.xdc.inc: Exception.h
+Exception.h:
+package/package.xdc.inc: package/internal/Exception.xdc.h
+package/internal/Exception.xdc.h:
+package/package.xdc.inc: Hwi.h
+Hwi.h:
+package/package.xdc.inc: package/internal/Hwi.xdc.h
+package/internal/Hwi.xdc.h:
+package/package.xdc.inc: TimestampProvider.h
+TimestampProvider.h:
+package/package.xdc.inc: package/internal/TimestampProvider.xdc.h
+package/internal/TimestampProvider.xdc.h:
+package/package.xdc.inc: MemoryProtect.h
+MemoryProtect.h:
+package/package.xdc.inc: package/internal/MemoryProtect.xdc.h
+package/internal/MemoryProtect.xdc.h:
+package/package.xdc.inc: Clobber.h
+Clobber.h:
+package/package.xdc.inc: package/internal/Clobber.xdc.h
+package/internal/Clobber.xdc.h:
+package/package.xdc.inc: Cache.h
+Cache.h:
+package/package.xdc.inc: package/internal/Cache.xdc.h
+package/internal/Cache.xdc.h:
+

@@ -1,0 +1,17 @@
+package.xdc
+package.xs
+Power.xdc
+Power.xs
+Power.xdt
+package/ti.sysbios.family.c674.sch
+package/.vers_g180
+package/.vers_r170
+package/.vers_b150
+package/.xdc-y25
+package/ti_sysbios_family_c674.java
+package/ti_sysbios_family_c674.class
+package/package_ti.sysbios.family.c674.c
+package/package.defs.h
+Power.h
+package/internal/Power.xdc.h
+package/ti.sysbios.family.c674.ccs

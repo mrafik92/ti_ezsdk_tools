@@ -1,0 +1,17 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+[Project Settings]
+ProjectName="ti.sysbios.family.c674.pscl"
+ProjectType=External
+CPUFamily=TMS320C67XX
+Tool="CustomBuilder"
+Config="Package"
+[Source Files]
+Source="../package/package_ti.sysbios.family.c674.pscl.c"
+Source="../pscl.c"
+Source="../pscl_config_evm6748.c"
+Source="../pscl_config_evm6748_372.c"
+Source="../pscl_config_evm6748_408.c"
+Source="../pscl_config_evm6748_456.c"
+Source="../pscl_config_null.c"
+Source="../pscl_config_C6742.c"
+Source="../pscl_config_lcdk.c"

@@ -1,0 +1,15 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+[Project Settings]
+ProjectName="ti.sdo.ipc"
+ProjectType=External
+CPUFamily=TMS470R4X
+Tool="CustomBuilder"
+Config="Package"
+[Source Files]
+Source="../package/package_ti.sdo.ipc.c"
+Source="../Notify.c"
+Source="../GateMP.c"
+Source="../Ipc.c"
+Source="../MessageQ.c"
+Source="../SharedRegion.c"
+Source="../ListMP.c"

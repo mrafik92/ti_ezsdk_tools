@@ -1,0 +1,17 @@
+package/package.bld.xml
+package/package.ext.xml
+package/package.rel.dot
+package/build.cfg
+package/package.xdc.inc
+package.bld
+package/package.cfg.xdc.inc
+lib/debug/ti.sdo.ipc.transports.aem3
+package/package_ti.sdo.ipc.transports.c
+TransportShm.c
+TransportShmSetup.c
+TransportShmCirc.c
+TransportShmCircSetup.c
+TransportShmNotify.c
+TransportShmNotifySetup.c
+TransportNullSetup.c
+lib/debug/ti.sdo.ipc.transports.ae674

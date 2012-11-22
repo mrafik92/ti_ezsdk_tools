@@ -1,0 +1,12 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+[Project Settings]
+ProjectName="ti.sysbios.family.arm.ducati.omap4430"
+ProjectType=External
+CPUFamily=TMS470R4X
+Tool="CustomBuilder"
+Config="Package"
+[Source Files]
+Source="../package/package_ti.sysbios.family.arm.ducati.omap4430.c"
+Source="../Power.c"
+Source="../Power_saveCpu.sv7M"
+Source="../Power_resumeCpu.sv7M"

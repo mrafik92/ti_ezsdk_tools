@@ -1,0 +1,13 @@
+package/package.bld.xml
+package/package.ext.xml
+package/package.rel.dot
+package/build.cfg
+package/package.xdc.inc
+package.bld
+package/package.cfg.xdc.inc
+lib/debug/ti.sdo.ipc.gates.aem3
+package/package_ti.sdo.ipc.gates.c
+GateHWSpinlock.c
+GateMPSupportNull.c
+GatePeterson.c
+lib/debug/ti.sdo.ipc.gates.ae674

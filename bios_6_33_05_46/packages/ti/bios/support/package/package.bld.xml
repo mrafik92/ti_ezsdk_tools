@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.bios.support" version="2, 0, 0, 0" producerId="undefined">
+    <units>
+        <module name="Lck"/>
+        <module name="Sys"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.bios.support.c"/>
+        <srcFile name="Lck.c"/>
+        <srcFile name="Sys.c"/>
+        <srcFile name="boot.c"/>
+    </sources>
+    <configscripts>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/debug/ti.bios.support.ae674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ti.bios.support/package/package_ti.bios.support.oe674.dep" src="package/package_ti.bios.support.c"/>
+        <srcFile name="package/lib/lib/debug/ti.bios.support/Lck.oe674.dep" src="Lck.c"/>
+        <srcFile name="package/lib/lib/debug/ti.bios.support/Sys.oe674.dep" src="Sys.c"/>
+        <srcFile name="package/lib/lib/debug/ti.bios.support/boot.oe674.dep" src="boot.c"/>
+        <srcFile name="package/rel/ti_bios_support.tar.dep" src="package/rel/ti_bios_support.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.elf.C674"
+            version="ti.targets.elf.C674{1,0,7.3,1"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="e674"
+            rootDir="/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/dsp-devkit/cgt6x_7_3_1"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/debug/ti.bios.support"
+        pname="lib/debug/ti.bios.support.ae674"
+        profile="debug"
+        target="ti.targets.elf.C674"/>
+    </libraries>
+    <configurations>
+    </configurations>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_bios_support"
+        pname="ti_bios_support.tar"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.rel.dot"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package.bld"/>
+        <file name="boot.s28"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/debug/ti.bios.support.ae674"/>
+        <file name="package/package_ti.bios.support.c"/>
+        <file name="Lck.c"/>
+        <file name="Sys.c"/>
+        <file name="boot.c"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

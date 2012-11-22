@@ -1,0 +1,11 @@
+package.xdc
+package/ti.sdo.ipc.build.sch
+package/.vers_g180
+package/.vers_r170
+package/.vers_b150
+package/.xdc-y25
+package/ti_sdo_ipc_build.java
+package/ti_sdo_ipc_build.class
+package/package_ti.sdo.ipc.build.c
+package/package.defs.h
+package/ti.sdo.ipc.build.ccs

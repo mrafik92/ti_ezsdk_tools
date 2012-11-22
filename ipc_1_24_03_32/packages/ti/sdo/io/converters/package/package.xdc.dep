@@ -1,0 +1,92 @@
+clean::
+	$(RM) package/ti.sdo.io.converters.sch
+	$(RM) package/.vers_g180
+	$(RM) package/.vers_r170
+	$(RM) package/.vers_b150
+	$(RM) package/.xdc-y25
+	$(RM) package/ti_sdo_io_converters.java
+	$(RM) package/ti_sdo_io_converters.class
+	$(RM) package/package_ti.sdo.io.converters.c
+	$(RM) package/package.defs.h
+	$(RM) Transformer.h
+	$(RM) package/internal/Transformer.xdc.h
+	$(RM) DriverAdapter.h
+	$(RM) package/internal/DriverAdapter.xdc.h
+	$(RM) NullConverter.h
+	$(RM) package/internal/NullConverter.xdc.h
+	$(RM) package/ti.sdo.io.converters.ccs
+
+.interfaces: package/ti.sdo.io.converters.sch package/.vers_g180 package/.vers_r170 package/.vers_b150 package/.xdc-y25 package/ti_sdo_io_converters.java package/package_ti.sdo.io.converters.c package/package.defs.h Transformer.h package/internal/Transformer.xdc.h DriverAdapter.h package/internal/DriverAdapter.xdc.h NullConverter.h package/internal/NullConverter.xdc.h package/ti.sdo.io.converters.ccs 
+package/package.xdc.inc: package/.vers_g180
+package/.vers_g180:
+package/package.xdc.inc: package/.vers_r170
+package/.vers_r170:
+package/package.xdc.inc: package/.vers_b150
+package/.vers_b150:
+
+.interfaces: Transformer.xdc DriverAdapter.xdc NullConverter.xdc 
+
+# schema include file dependencies
+package.xs:
+package/package.xdc.inc: package.xs
+Transformer.xs:
+package/package.xdc.inc: Transformer.xs
+DriverAdapter.xs:
+package/package.xdc.inc: DriverAdapter.xs
+NullConverter.xs:
+package/package.xdc.inc: NullConverter.xs
+
+# schema update dependencies
+package/package.xdc.inc: Transformer.xdc
+package/package.xdc.inc: DriverAdapter.xdc
+package/package.xdc.inc: NullConverter.xdc
+package/package.xdc.inc: xdc/IPackage.xdc
+xdc/IPackage.xdc:
+vpath xdc/IPackage.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/io/IConverter.xdc
+ti/sdo/io/IConverter.xdc:
+vpath ti/sdo/io/IConverter.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/io/DriverTypes.xdc
+ti/sdo/io/DriverTypes.xdc:
+vpath ti/sdo/io/DriverTypes.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/utils/List.xdc
+ti/sdo/utils/List.xdc:
+vpath ti/sdo/utils/List.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/runtime/Assert.xdc
+xdc/runtime/Assert.xdc:
+vpath xdc/runtime/Assert.xdc $(XPKGVPATH)
+
+ifneq (clean,$(MAKECMDGOALS))
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/global/java/package.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/global/java/package.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/ecj.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/ecj.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/intern/gen/java/package.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/intern/gen/java/package.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/antlr.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/antlr.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/intern/xsr/java/package.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/intern/xsr/java/package.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/tar.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/tar.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/spec/java/package.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/spec/java/package.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/intern/cmd/java/package.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/intern/cmd/java/package.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/js.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/js.jar
+endif
+# goals for files generated during schema generation but unspecified by schema's pattern rule
+package/package.xdc.inc: Transformer.h
+Transformer.h:
+package/package.xdc.inc: package/internal/Transformer.xdc.h
+package/internal/Transformer.xdc.h:
+package/package.xdc.inc: DriverAdapter.h
+DriverAdapter.h:
+package/package.xdc.inc: package/internal/DriverAdapter.xdc.h
+package/internal/DriverAdapter.xdc.h:
+package/package.xdc.inc: NullConverter.h
+NullConverter.h:
+package/package.xdc.inc: package/internal/NullConverter.xdc.h
+package/internal/NullConverter.xdc.h:
+

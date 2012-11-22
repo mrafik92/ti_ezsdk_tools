@@ -1,0 +1,16 @@
+package/package.bld.xml
+package/package.ext.xml
+package/package.rel.dot
+package/build.cfg
+package/package.xdc.inc
+package.bld
+SyncEvent.xml
+SyncSem.xml
+SyncSwi.xml
+package/package.cfg.xdc.inc
+lib/debug/ti.sysbios.syncs.aem3
+package/package_ti.sysbios.syncs.c
+SyncSem.c
+SyncSwi.c
+SyncEvent.c
+lib/debug/ti.sysbios.syncs.ae674

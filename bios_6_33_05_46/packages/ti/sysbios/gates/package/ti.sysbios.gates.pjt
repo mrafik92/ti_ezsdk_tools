@@ -1,0 +1,16 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+[Project Settings]
+ProjectName="ti.sysbios.gates"
+ProjectType=External
+CPUFamily=TMS470R4X
+Tool="CustomBuilder"
+Config="Package"
+[Source Files]
+Source="../package/package_ti.sysbios.gates.c"
+Source="../GateHwi.c"
+Source="../GateAll.c"
+Source="../GateSwi.c"
+Source="../GateTask.c"
+Source="../GateTest.c"
+Source="../GateMutex.c"
+Source="../GateMutexPri.c"

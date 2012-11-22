@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.utils" version="1, 0, 0, 0" producerId="undefined">
+    <units>
+        <interface name="INameServerRemote"/>
+        <module name="Build"/>
+        <module name="NameServer"/>
+        <module name="NameServerRemoteNull"/>
+        <module name="MultiProc"/>
+        <module name="List"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.sdo.utils.c"/>
+        <srcFile name="NameServer.c"/>
+        <srcFile name="NameServerRemoteNull.c"/>
+        <srcFile name="List.c"/>
+        <srcFile name="MultiProc.c"/>
+        <srcFile name="package/cfg/instrumented_pem3.c"/>
+        <srcFile name="package/cfg/nonInstrumented_pem3.c"/>
+        <srcFile name="package/cfg/instrumented_pe674.c"/>
+        <srcFile name="package/cfg/nonInstrumented_pe674.c"/>
+    </sources>
+    <configscripts>
+        <srcFile name="instrumented.cfg"/>
+        <srcFile name="nonInstrumented.cfg"/>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/debug/ti.sdo.utils.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.utils/package/package_ti.sdo.utils.oem3.dep" src="package/package_ti.sdo.utils.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.utils/NameServer.oem3.dep" src="NameServer.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.utils/NameServerRemoteNull.oem3.dep" src="NameServerRemoteNull.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.utils/List.oem3.dep" src="List.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.utils/MultiProc.oem3.dep" src="MultiProc.c"/>
+        <srcFile name="lib/debug/ti.sdo.utils.ae674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.utils/package/package_ti.sdo.utils.oe674.dep" src="package/package_ti.sdo.utils.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.utils/NameServer.oe674.dep" src="NameServer.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.utils/NameServerRemoteNull.oe674.dep" src="NameServerRemoteNull.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.utils/List.oe674.dep" src="List.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.utils/MultiProc.oe674.dep" src="MultiProc.c"/>
+        <srcFile name="package/cfg/instrumented_pem3.mak" src="package.bld"/>
+        <srcFile name="package/cfg/instrumented_pem3.oem3.dep" src="package/cfg/instrumented_pem3.c"/>
+        <srcFile name="package/cfg/instrumented_pem3.dep" src="package/cfg/instrumented_pem3.cfg"/>
+        <srcFile name="package/cfg/nonInstrumented_pem3.mak" src="package.bld"/>
+        <srcFile name="package/cfg/nonInstrumented_pem3.oem3.dep" src="package/cfg/nonInstrumented_pem3.c"/>
+        <srcFile name="package/cfg/nonInstrumented_pem3.dep" src="package/cfg/nonInstrumented_pem3.cfg"/>
+        <srcFile name="package/cfg/instrumented_pe674.mak" src="package.bld"/>
+        <srcFile name="package/cfg/instrumented_pe674.oe674.dep" src="package/cfg/instrumented_pe674.c"/>
+        <srcFile name="package/cfg/instrumented_pe674.dep" src="package/cfg/instrumented_pe674.cfg"/>
+        <srcFile name="package/cfg/nonInstrumented_pe674.mak" src="package.bld"/>
+        <srcFile name="package/cfg/nonInstrumented_pe674.oe674.dep" src="package/cfg/nonInstrumented_pe674.c"/>
+        <srcFile name="package/cfg/nonInstrumented_pe674.dep" src="package/cfg/nonInstrumented_pe674.cfg"/>
+        <srcFile name="package/rel/ti_sdo_utils.tar.dep" src="package/rel/ti_sdo_utils.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.arm.elf.M3"
+            version="ti.targets.arm.elf.M3{1,0,4.9,2"
+            platform="ti.platforms.simDM8168"
+            isa="v7M"
+            suffix="em3"
+            rootDir="/proj/productization/tools/cgt470/cgt470_4_9_2/"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.elf.C674"
+            version="ti.targets.elf.C674{1,0,7.3,1"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="e674"
+            rootDir="/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/dsp-devkit/cgt6x_7_3_1"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/debug/ti.sdo.utils"
+        pname="lib/debug/ti.sdo.utils.aem3"
+        profile="debug"
+        target="ti.targets.arm.elf.M3"/>
+    <library name="lib/debug/ti.sdo.utils"
+        pname="lib/debug/ti.sdo.utils.ae674"
+        profile="debug"
+        target="ti.targets.elf.C674"/>
+    </libraries>
+    <configurations>
+    <configuration name="instrumented"
+        pname="instrumented.pem3"
+        target="ti.targets.arm.elf.M3"
+        platform="ti.platforms.simDM8168"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/instrumented_pem3.cfg"
+        xCfgPrefix="package/cfg/instrumented_pem3"
+        cfgScript="instrumented.cfg"
+        />
+    <configuration name="nonInstrumented"
+        pname="nonInstrumented.pem3"
+        target="ti.targets.arm.elf.M3"
+        platform="ti.platforms.simDM8168"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/nonInstrumented_pem3.cfg"
+        xCfgPrefix="package/cfg/nonInstrumented_pem3"
+        cfgScript="nonInstrumented.cfg"
+        />
+    <configuration name="instrumented"
+        pname="instrumented.pe674"
+        target="ti.targets.elf.C674"
+        platform="ti.platforms.evmDA830"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/instrumented_pe674.cfg"
+        xCfgPrefix="package/cfg/instrumented_pe674"
+        cfgScript="instrumented.cfg"
+        />
+    <configuration name="nonInstrumented"
+        pname="nonInstrumented.pe674"
+        target="ti.targets.elf.C674"
+        platform="ti.platforms.evmDA830"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/nonInstrumented_pe674.cfg"
+        xCfgPrefix="package/cfg/nonInstrumented_pe674"
+        cfgScript="nonInstrumented.cfg"
+        />
+    </configurations>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_utils"
+        pname="ti_sdo_utils.tar"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.rel.dot"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package.bld"/>
+        <file name="_MultiProc.h"/>
+        <file name="_NameServer.h"/>
+        <file name="UTILS.c"/>
+        <file name="makefile.xdt"/>
+        <file name="instrumented.cfg"/>
+        <file name="nonInstrumented.cfg"/>
+        <file name="lib/instrumented_em3/utils/utils.lib"/>
+        <file name="lib/nonInstrumented_em3/utils/utils.lib"/>
+        <file name="lib/instrumented_e674/utils/utils.lib"/>
+        <file name="lib/nonInstrumented_e674/utils/utils.lib"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/debug/ti.sdo.utils.aem3"/>
+        <file name="package/package_ti.sdo.utils.c"/>
+        <file name="NameServer.c"/>
+        <file name="NameServerRemoteNull.c"/>
+        <file name="List.c"/>
+        <file name="MultiProc.c"/>
+        <file name="lib/debug/ti.sdo.utils.ae674"/>
+        <file name="package/cfg/instrumented_pem3.xdc.inc"/>
+        <file name="package/cfg/instrumented_pem3.cfg"/>
+        <file name="package/cfg/instrumented_pem3.c"/>
+        <file name="package/cfg/nonInstrumented_pem3.xdc.inc"/>
+        <file name="package/cfg/nonInstrumented_pem3.cfg"/>
+        <file name="package/cfg/nonInstrumented_pem3.c"/>
+        <file name="package/cfg/instrumented_pe674.xdc.inc"/>
+        <file name="package/cfg/instrumented_pe674.cfg"/>
+        <file name="package/cfg/instrumented_pe674.c"/>
+        <file name="package/cfg/nonInstrumented_pe674.xdc.inc"/>
+        <file name="package/cfg/nonInstrumented_pe674.cfg"/>
+        <file name="package/cfg/nonInstrumented_pe674.c"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

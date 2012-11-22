@@ -1,0 +1,19 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+[Project Settings]
+ProjectName="ti.sysbios.knl"
+ProjectType=External
+CPUFamily=TMS470R4X
+Tool="CustomBuilder"
+Config="Package"
+[Source Files]
+Source="../package/package_ti.sysbios.knl.c"
+Source="../Clock.c"
+Source="../Idle.c"
+Source="../Intrinsics.c"
+Source="../Swi.c"
+Source="../Swi_andn.c"
+Source="../Task.c"
+Source="../Event.c"
+Source="../Semaphore.c"
+Source="../Mailbox.c"
+Source="../Queue.c"

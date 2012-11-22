@@ -1,0 +1,178 @@
+/*
+ * Do not modify this file; it is automatically generated from the template
+ * linkcmd.xdt in the ti.targets.elf package and will be overwritten.
+ */
+
+/*
+ * put '"'s around paths because, without this, the linker
+ * considers '-' as minus operator, not a file name character.
+ */
+
+
+-l"/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/ipc_1_24_03_32/packages/ti/sdo/ipc/lib/instrumented_em3/ipc/ipc.lib"
+-l"/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/ipc_1_24_03_32/packages/ti/sdo/ipc/lib/instrumented_em3/sysbios/sysbios.lib"
+-l"/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/ti/targets/arm/rtsarm/lib/ti.targets.arm.rtsarm.aem3"
+-l"/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/ti/targets/arm/rtsarm/lib/boot.aem3"
+-l"/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/ti/targets/arm/rtsarm/lib/auto_init.aem3"
+
+--retain="*(xdc.meta)"
+
+/* C6x Elf symbols */
+--symbol_map __TI_STACK_SIZE=__STACK_SIZE
+--symbol_map __TI_STACK_BASE=__stack
+--symbol_map _stack=__stack
+
+
+
+--args 0x0
+-heap  0x0
+-stack 0x1000
+
+MEMORY
+{
+    L2_BOOT : org = 0x0, len = 0x4000
+    L2_RAM : org = 0x20004000, len = 0x3c000
+    OCMC_0 : org = 0x300000, len = 0x40000
+    OCMC_1 : org = 0x400000, len = 0x40000
+    DDR3_RAM : org = 0x80000000, len = 0x10000000
+}
+
+/*
+ * Linker command file contributions from all loaded packages:
+ */
+
+/* Content from xdc.services.global (null): */
+
+/* Content from xdc (null): */
+
+/* Content from xdc.corevers (null): */
+
+/* Content from xdc.shelf (null): */
+
+/* Content from xdc.services.spec (null): */
+
+/* Content from xdc.services.intern.xsr (null): */
+
+/* Content from xdc.services.intern.gen (null): */
+
+/* Content from xdc.services.intern.cmd (null): */
+
+/* Content from xdc.bld (null): */
+
+/* Content from ti.targets (null): */
+
+/* Content from ti.targets.arm (null): */
+
+/* Content from ti.targets.arm.elf (null): */
+
+/* Content from xdc.rov (null): */
+
+/* Content from xdc.runtime (null): */
+
+/* Content from ti.targets.arm.rtsarm (null): */
+
+/* Content from ti.sdo.ipc.interfaces (null): */
+
+/* Content from ti.sysbios.interfaces (null): */
+
+/* Content from ti.sysbios.family (null): */
+
+/* Content from ti.sysbios.family.arm (ti/sysbios/family/arm/linkcmd.xdt): */
+--retain "*(.vecs)"
+
+/* Content from xdc.services.getset (null): */
+
+/* Content from xdc.runtime.knl (null): */
+
+/* Content from ti.sdo.ipc.family (null): */
+
+/* Content from ti.catalog.arm.cortexm3 (null): */
+
+/* Content from ti.catalog.peripherals.hdvicp2 (null): */
+
+/* Content from ti.catalog (null): */
+
+/* Content from ti.catalog.arm.peripherals.timers (null): */
+
+/* Content from xdc.platform (null): */
+
+/* Content from xdc.cfg (null): */
+
+/* Content from ti.catalog.c6000 (null): */
+
+/* Content from ti.catalog.arm.cortexa8 (null): */
+
+/* Content from ti.platforms.simDM8168 (null): */
+
+/* Content from ti.sysbios (null): */
+
+/* Content from ti.sysbios.hal (null): */
+
+/* Content from ti.sysbios.knl (null): */
+
+/* Content from ti.sysbios.gates (null): */
+
+/* Content from ti.sdo.utils (null): */
+
+/* Content from ti.sysbios.family.arm.m3 (ti/sysbios/family/arm/m3/linkcmd.xdt): */
+
+/* Content from ti.sysbios.family.arm.ducati (null): */
+
+/* Content from ti.sysbios.syncs (null): */
+
+/* Content from ti.sysbios.xdcruntime (null): */
+
+/* Content from ti.sysbios.heaps (null): */
+
+/* Content from ti.sysbios.utils (null): */
+
+/* Content from ti.sdo.ipc (ti/sdo/ipc/linkcmd.xdt): */
+
+SECTIONS
+{
+
+    ti_sdo_ipc_init: load > DDR3_RAM, type = NOINIT 
+}
+
+
+/* Content from xdc.services.io (null): */
+
+/* Content from ti.sdo.ipc.notifyDrivers (null): */
+
+/* Content from ti.sdo.ipc.family.ti81xx (null): */
+
+
+/*
+ * symbolic aliases for static instance objects
+ */
+xdc_runtime_Startup__EXECFXN__C = 1;
+xdc_runtime_Startup__RESETFXN__C = 1;
+TSK_idle = ti_sysbios_knl_Task_Object__table__V + 0;
+
+SECTIONS
+{
+    .text: load >> DDR3_RAM
+    .stack: load > DDR3_RAM
+    GROUP: load > DDR3_RAM
+    {
+        .bss:
+        .neardata:
+        .rodata:
+    }
+    .cinit: load > DDR3_RAM
+    .init_array: load > DDR3_RAM
+    .const: load >> DDR3_RAM
+    .data: load >> DDR3_RAM
+    .fardata: load >> DDR3_RAM
+    .switch: load >> DDR3_RAM
+    .sysmem: load > DDR3_RAM
+    .far: load >> DDR3_RAM
+    .args: load > DDR3_RAM align = 0x4, fill = 0 {_argsize = 0x0; }
+    .cio: load >> DDR3_RAM
+    .bootVecs:  type = DSECT
+    .vecs: load > 0x400, type = DSECT
+    .resetVecs: load > 0x400
+    .ducatiBoot: load > 0x0
+    xdc.meta: load >> DDR3_RAM, type = COPY
+
+}

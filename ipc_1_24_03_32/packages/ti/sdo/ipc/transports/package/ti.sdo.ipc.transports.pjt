@@ -1,0 +1,16 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+[Project Settings]
+ProjectName="ti.sdo.ipc.transports"
+ProjectType=External
+CPUFamily=TMS470R4X
+Tool="CustomBuilder"
+Config="Package"
+[Source Files]
+Source="../package/package_ti.sdo.ipc.transports.c"
+Source="../TransportShm.c"
+Source="../TransportShmSetup.c"
+Source="../TransportShmCirc.c"
+Source="../TransportShmCircSetup.c"
+Source="../TransportShmNotify.c"
+Source="../TransportShmNotifySetup.c"
+Source="../TransportNullSetup.c"

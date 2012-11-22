@@ -1,0 +1,17 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+[Project Settings]
+ProjectName="ti.sysbios.family.arm.ducati"
+ProjectType=External
+CPUFamily=TMS470R4X
+Tool="CustomBuilder"
+Config="Package"
+[Source Files]
+Source="../package/package_ti.sysbios.family.arm.ducati.c"
+Source="../Core.c"
+Source="../Core_asm.sv7M"
+Source="../CTM_asm.sv7M"
+Source="../GateDualCore.c"
+Source="../Timer.c"
+Source="../TimerSupport.c"
+Source="../TimestampProvider.c"
+Source="../Wugen.c"

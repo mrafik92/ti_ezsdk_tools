@@ -1,0 +1,17 @@
+package/package.bld.xml
+package/package.ext.xml
+package/package.rel.dot
+package/build.cfg
+package/package.xdc.inc
+package.bld
+linkcmd.xdt
+Power_link.xdt
+Power.xml
+pmi.h
+pscl.h
+Power_trackDefs.h
+commonLib.bld
+package/package.cfg.xdc.inc
+lib/debug/ti.sysbios.family.c674.ae674
+package/package_ti.sysbios.family.c674.c
+Power.c

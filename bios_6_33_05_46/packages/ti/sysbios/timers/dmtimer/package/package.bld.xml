@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sysbios.timers.dmtimer" version="2, 0, 0, 0" producerId="undefined">
+    <units>
+        <module name="Timer"/>
+        <module name="TimestampProvider"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.sysbios.timers.dmtimer.c"/>
+        <srcFile name="Timer.c"/>
+        <srcFile name="Timer_asm.s64P"/>
+        <srcFile name="TimestampProvider.c"/>
+        <srcFile name="Timer_asm.sv7M"/>
+    </sources>
+    <configscripts>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/debug/ti.sysbios.timers.dmtimer.ae674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ti.sysbios.timers.dmtimer/package/package_ti.sysbios.timers.dmtimer.oe674.dep" src="package/package_ti.sysbios.timers.dmtimer.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sysbios.timers.dmtimer/Timer.oe674.dep" src="Timer.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sysbios.timers.dmtimer/Timer_asm.oe674.dep" src="Timer_asm.s64P"/>
+        <srcFile name="package/lib/lib/debug/ti.sysbios.timers.dmtimer/TimestampProvider.oe674.dep" src="TimestampProvider.c"/>
+        <srcFile name="lib/debug/ti.sysbios.timers.dmtimer.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ti.sysbios.timers.dmtimer/package/package_ti.sysbios.timers.dmtimer.oem3.dep" src="package/package_ti.sysbios.timers.dmtimer.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sysbios.timers.dmtimer/Timer.oem3.dep" src="Timer.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sysbios.timers.dmtimer/Timer_asm.oem3.dep" src="Timer_asm.sv7M"/>
+        <srcFile name="package/lib/lib/debug/ti.sysbios.timers.dmtimer/TimestampProvider.oem3.dep" src="TimestampProvider.c"/>
+        <srcFile name="package/rel/ti_sysbios_timers_dmtimer.tar.dep" src="package/rel/ti_sysbios_timers_dmtimer.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.elf.C674"
+            version="ti.targets.elf.C674{1,0,7.3,1"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="e674"
+            rootDir="/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/dsp-devkit/cgt6x_7_3_1"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.M3"
+            version="ti.targets.arm.elf.M3{1,0,4.9,2"
+            platform="ti.platforms.simDM8168"
+            isa="v7M"
+            suffix="em3"
+            rootDir="/proj/productization/tools/cgt470/cgt470_4_9_2/"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/debug/ti.sysbios.timers.dmtimer"
+        pname="lib/debug/ti.sysbios.timers.dmtimer.ae674"
+        profile="debug"
+        target="ti.targets.elf.C674"/>
+    <library name="lib/debug/ti.sysbios.timers.dmtimer"
+        pname="lib/debug/ti.sysbios.timers.dmtimer.aem3"
+        profile="debug"
+        target="ti.targets.arm.elf.M3"/>
+    </libraries>
+    <configurations>
+    </configurations>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sysbios_timers_dmtimer"
+        pname="ti_sysbios_timers_dmtimer.tar"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.rel.dot"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="doc-files"/>
+        <file name="package.bld"/>
+        <file name="custom.mak"/>
+        <file name="Timer.xml"/>
+        <file name="TimestampProvider.xml"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/debug/ti.sysbios.timers.dmtimer.ae674"/>
+        <file name="package/package_ti.sysbios.timers.dmtimer.c"/>
+        <file name="Timer.c"/>
+        <file name="Timer_asm.s64P"/>
+        <file name="TimestampProvider.c"/>
+        <file name="lib/debug/ti.sysbios.timers.dmtimer.aem3"/>
+        <file name="Timer_asm.sv7M"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

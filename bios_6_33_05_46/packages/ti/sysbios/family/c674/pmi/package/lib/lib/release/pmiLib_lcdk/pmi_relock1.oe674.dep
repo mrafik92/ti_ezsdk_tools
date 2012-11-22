@@ -1,0 +1,5 @@
+package/lib/lib/release/pmiLib_lcdk/pmi_relock1.oe674: pmi_relock1.c ../../../../../ti/sysbios/family/c674/pmi.h ./pmi_defs6748.h pmi_defs6748.h 
+pmi_relock1.c:
+../../../../../ti/sysbios/family/c674/pmi.h:
+./pmi_defs6748.h:
+pmi_defs6748.h:

@@ -1,0 +1,16 @@
+package/package.bld.xml
+package/package.ext.xml
+package/package.rel.dot
+package/build.cfg
+package/package.xdc.inc
+package.bld
+_HeapBufMP.h
+_HeapMemMP.h
+_HeapMultiBufMP.h
+package/package.cfg.xdc.inc
+lib/debug/ti.sdo.ipc.heaps.aem3
+package/package_ti.sdo.ipc.heaps.c
+HeapMemMP.c
+HeapBufMP.c
+HeapMultiBufMP.c
+lib/debug/ti.sdo.ipc.heaps.ae674

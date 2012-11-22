@@ -1,0 +1,1183 @@
+C6000 C/C++ CODE GENERATION TOOLS
+7.3.1 September 2011
+Defect History
+
+------------------------------------------------------------------------------
+Table of Contents
+------------------------------------------------------------------------------
+1. 7.3.1 Fixed Code Generation Tools Defects
+2. 7.3.0 Fixed Code Generation Tools Defects
+3. 7.3.0B3 Fixed Code Generation Tools Defects
+4. 7.3.0B2 Fixed Code Generation Tools Defects
+5. Current Known Issues
+
+
+------------------------------------------------------------------------------
+1. 7.3.1 Fixed Code Generation Tools Defects
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040151
+------------------------------------------------------------------------------
+
+Summary            : Getting compile time generated symbol re-definition error
+		     during linking C674x ELF target
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+The linker may generate "duplicate symbol" errors for symbols named
+like _TI_DW_.debug_info.<checksum> when linking object files.  Using ofd, 
+it can be seen that these symbols are signatures for COMDAT groups.  This
+is an error in COMDAT generation in the assembler and linker.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040319
+------------------------------------------------------------------------------
+
+Summary            : OFD crashes while printing debug info from relocatable file
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : OFD Utility
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040376
+------------------------------------------------------------------------------
+
+Summary            : Assignment to 2D-array, which has more than 20 items,
+		     resulted in INTERNAL ERROR.
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+A loop that only writes long constants to a long integer array causes
+an internal compiler error. 
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040400
+------------------------------------------------------------------------------
+
+Summary            : Bitfield alias may be missed when struct is smaller than
+		     field type
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+An alias may be missed, and incorrect answers result, when a struct 
+contains a bitfield and the struct's total size is smaller than the
+size of the bitfield's type.  Eg, a field like "int x6" -- the bitfield is 6
+bits but int is 16 or 32.  Making both direct and indirect accesses to 
+the same field may be an additional requirement to exhibit this problem.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040497
+------------------------------------------------------------------------------
+
+Summary            : DSECT failure
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : Linker
+
+Description: 
+In some cases, code allocated to a DSECT type output section may be 
+included in the output file.  This is known to occur if the code in the
+DSECT references a function that is not allocated to a DSECT.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040622
+------------------------------------------------------------------------------
+
+Summary            : Compiler may miss alias of struct returned from call if
+		     contains bitfield and fits in int
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+The compiler may convert local struct variables of struct type into
+simple ints, if the struct is small enough and all fields are bitfields.  
+If such a converted struct is also returned from a function call, the 
+compiler may miss an alias between the returned-value struct and the 
+local struct.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040626
+------------------------------------------------------------------------------
+
+Summary            : If it gets the struct that has bit field member that is
+		     return value of function, the correct value can not refer.
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+There were two stores to the structure
+1) Setting bitfields to 1
+2) Setting bitfields to 2
+
+The bug caused the stores to be switched around, causing the store of
+1's to happen after the store of 2's, leading to the incorrect final
+value.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040650
+------------------------------------------------------------------------------
+
+Summary            : Error when specifying 400 or more to precision of output
+		     format specifier
+
+Fixed in           : 7.3.1
+Severity           : S3 - Minor
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+The minimum max conversion (precision) printf size to be C89 compliant
+is 509.   The conversion size is now C89 compliant.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040657
+------------------------------------------------------------------------------
+
+Summary            : After the initialized array is used to assign into other
+		     variable in loop, when it is used the assigned variable, 
+                     the value o
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : Optimizer
+
+Description: 
+An initialized local array variable inside a loop was incorrectly
+setup.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040658
+------------------------------------------------------------------------------
+
+Summary            : Taking the address of a static local variable may lead to a
+		     missed alias
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : Optimizer
+
+Description: 
+Accessing a static local variable both directly and indirectly, by
+taking its address, may miss an alias and produce incorrect behavior.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040665
+------------------------------------------------------------------------------
+
+Summary            : Anonymous function call that can resolve to direct pure
+		     call may cause compiler crash
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : Optimizer
+
+Description: 
+If an anonymous function call -- a call using a pointer-to-function 
+variable rather than a direct function name -- can be resolved to a 
+direct call to a known function with no side effects, in some cases the
+compiler may crash.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040691
+------------------------------------------------------------------------------
+
+Summary            : Video codec performance degraded when cgtools migrated to
+		     7.2.4
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+A loop which chooses between faster and safer versions at run time
+based on a pointer comparison may not derive all the benefit from the
+comparison in the faster case.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040777
+------------------------------------------------------------------------------
+
+Summary            : INTERNAL ERROR occurs. Usage of  array variable of
+		     "unsigned long" type.
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040791
+------------------------------------------------------------------------------
+
+Summary            : A loop whose initial value has a side effect may compile
+		     incorrectly
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : Optimizer
+
+Description: 
+A loop like
+
+  for (j = --i;  j > 0;  j >>= 1)
+
+may iterate the wrong number of times.	The key detail is that j's 
+initial value is --i, which also updates i.  The problem has only been 
+seen in loops that iterate by >>=, but it could possibly affect other 
+loops.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040793
+------------------------------------------------------------------------------
+
+Summary            : Accessing the same variable both directly and via
+		     pointer-to-void may miss the alias
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+If the same variable is referred to both directly and via a 
+pointer-to-void parameter, the compiler may not detect that both
+accesses are to the same variable.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040908
+------------------------------------------------------------------------------
+
+Summary            : Hex converter crashes with segmentation fault
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : Hex Converter (hex)
+
+Description: 
+Hex converter crashes with segmentation fault if more than 15 --exclude
+options are used.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00041130
+------------------------------------------------------------------------------
+
+Summary            : Complicated nested IFs may access memory in wrong order
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : Optimizer
+
+Description: 
+Given two sufficiently complicated memory accesses inside the
+predicates of nested IFs -- typically indexed accesses to part of a struct -- 
+the compiler may reorder the accesses inappropriately.  The effect is that 
+the inner access, or one dependent on the inner IF, may happen when it 
+should have been disallowed.  The consequence may be a faulting access
+on targets that check for such things;  targets that don't check won't see
+any problem, because the incorrect access will be discarded.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00041166
+------------------------------------------------------------------------------
+
+Summary            : C++ static consts are not optimized away and have space
+		     reserved in .bss
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : Code Generator
+
+Description: 
+The parser now removes unreferenced static const variables.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00041224
+------------------------------------------------------------------------------
+
+Summary            : Compiler generating illegal cross path read in software
+		     pipelined loop
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : Code Generator
+
+Description: 
+There is no easy correlation between the C source code and the trigger 
+codntions of this bug. However, it usually happens when there is a
+vector register spill. When this bug happens, the compiler quits. The user can
+not get the object file and the assembler will emit an error message.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00041264
+------------------------------------------------------------------------------
+
+Summary            : Optimiser may combine _mpy and _mpyh into _mpy2ll
+		     incorrectly given -me
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : Optimizer
+
+Description: 
+The compiler may combine _mpy and _mpyh of the same operands into
+_mpy2ll and then extract from the result.  With -me, the operations are
+combined in the wrong order.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00041312
+------------------------------------------------------------------------------
+
+Summary            : Register allocation in Software Pipelining is wrong because
+		     of errors in conflict graph
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : Code Generator
+
+Description: 
+Register allocation is wrong in the kernel of a software pipeline loop.
+The reason is that the conflict graph built for this kernel does not cover all 
+the references.  In this case, one of the def of a register falls just one cycle
+following the kernel.  The conflict graph builder wrongly thinks this def does 
+not belong to the kernel.  The fix corrects this error.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00041384
+------------------------------------------------------------------------------
+
+Summary            : cg6x3 internal error on CMPxx instruction with
+		     reg-pair operand
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : Code Generator
+
+Description: 
+This defect can only occur when compiling with -mvtesla.  The compiler 
+will produce an error and stop if a linear assembly source file has a 
+CMPGT, CMPLT, CMPGTU, or CMPLTU instruction with a register pair source
+operand.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00041395
+------------------------------------------------------------------------------
+
+Summary            : scanf %1f should stop after one character
+
+Fixed in           : 7.3.1
+Severity           : S3 - Minor
+Affected Component : Runtime Support Libraries (RTS)
+
+Description: 
+The scanf format %1f should stop after one character of input, but it 
+ignores the field width and keeps parsing as long as the input looks
+like a floating-point number.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00041396
+------------------------------------------------------------------------------
+
+Summary            : sscanf(" ", "%s", arg) should not modify arg
+
+Fixed in           : 7.3.1
+Severity           : S3 - Minor
+Affected Component : Runtime Support Libraries (RTS)
+
+Description: 
+When the scanf format %s is used, if there are no non-whitespace 
+characters in the input, the conversion should fail and should not
+modify the argument.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00041397
+------------------------------------------------------------------------------
+
+Summary            : scanf %4[..] consumes 5 characters
+
+Fixed in           : 7.3.1
+Severity           : S3 - Minor
+Affected Component : Runtime Support Libraries (RTS)
+
+Description: 
+With a format string containing a %[ conversion specifier with field
+width, and input containing a sequence of characters that matches the
+scanset and has more characters than the field width, a call to vfscanf
+shall assign the number of characters equal to the field width to the
+corresponding pointer to character array leaving characters after the
+input item unread. 7.19.6.9;2a (161)	
+
+The bug here is that, while _scanfi assigns the correct number of 
+characters, it fails to unget the following character, which belongs to
+the next conversion.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00041398
+------------------------------------------------------------------------------
+
+Summary            : scanf %[..] matching failure should return immediately
+
+Fixed in           : 7.3.1
+Severity           : S3 - Minor
+Affected Component : Runtime Support Libraries (RTS)
+
+Description: 
+When a conversion fails, scanf should return immediately.  In these
+test cases, scanf erroneously keeps going.  scanf eventually reports a
+return value that is too large.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00041442
+------------------------------------------------------------------------------
+
+Summary            : printf("%#.4o",345) adds too many zeros
+
+Fixed in           : 7.3.1
+Severity           : S3 - Minor
+Affected Component : Runtime Support Libraries (RTS)
+
+Description: 
+When using the # printf format flag, printf should only add an extra
+"0" at the beginning of the number if it isn't already "0".
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00041447
+------------------------------------------------------------------------------
+
+Summary            : printf("%#.0o",0) fails to write "0"
+
+Fixed in           : 7.3.1
+Severity           : S3 - Minor
+Affected Component : Runtime Support Libraries (RTS)
+
+Description: 
+For *printf functions, the C standard requires that if the value is 0,
+the precision is 0, and the # flag is used, a single "0" will be
+printed.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00041470
+------------------------------------------------------------------------------
+
+Summary            : cmp6x takes more than 1 hour during template instantiation
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : Compressor (cmp)
+
+Description: 
+The C6000 compressor (cmp6x) had a bug in a function intended to cache
+code labels.  This would slow down processing of long code sections.
+The longer the section, the exponentially worse the slowdown would be.
+For a code section with over 200,000 instructions, the compressor
+could run for more than an hour.  This is made worse by using C++
+templates in COFF mode, which uses late template instantiation, which
+means the compressor will run over and over while compressing
+templates, which can get to be very large.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00041550
+------------------------------------------------------------------------------
+
+Summary            : sscanf %% failure not handled correctly
+
+Fixed in           : 7.3.1
+Severity           : S3 - Minor
+Affected Component : Runtime Support Libraries (RTS)
+
+Description: 
+scanf fails in these ways when the %% conversion specifier fails
+When any sort of error occurs with %%, scanf immediately returns EOF. 
+It should instead return EOF only if there were 0 previous successful
+conversions and there was an input failure.  If the failure was either
+a matching failure, or there were any previous successful conversions,
+it should return the number of previous successful conversions.
+When the failure is a matching failure, scanf should unget the
+character that didn't match.  It fails to do so.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00041551
+------------------------------------------------------------------------------
+
+Summary            : scanf %d and %f should immediately return upon input
+		     failure, even if ordinary characters were matched
+
+Fixed in           : 7.3.1
+Severity           : S3 - Minor
+Affected Component : Runtime Support Libraries (RTS)
+
+Description: 
+scanf should immediately return when an input failure occurs, even if 
+ordinary characters in the format were already successfully matched. 
+This bug affects all of the integer and float conversions.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00041552
+------------------------------------------------------------------------------
+
+Summary            : sscanf.c _chkmbc should return EOF on input failure
+
+Fixed in           : 7.3.1
+Severity           : S3 - Minor
+Affected Component : Runtime Support Libraries (RTS)
+
+Description: 
+It should be possible for sscanf to return EOF on a string if an input
+error occurs (the end of the input string is reached before the format
+string is exhausted), but it does not return EOF as appropriate.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00041553
+------------------------------------------------------------------------------
+
+Summary            : scanf input failure when looking for ordinary characters
+		     always returns EOF
+
+Fixed in           : 7.3.1
+Severity           : S3 - Minor
+Affected Component : Runtime Support Libraries (RTS)
+
+Description: 
+When matching ordinary characters in the format string, if there is an
+input failure, scanf should return EOF only if there were no previous
+successful conversions.  If there were any, it should return the
+number of previous successful conversions.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00041554
+------------------------------------------------------------------------------
+
+Summary            : scanf %e and %[ should not return EOF on matching failure
+
+Fixed in           : 7.3.1
+Severity           : S3 - Minor
+Affected Component : Runtime Support Libraries (RTS)
+
+Description: 
+When using %f (or other floating-point conversion specifier) or %[, if
+a matching failure occurs before even one character is matched, scanf
+will return EOF instead of 0 as the standard requires.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00041786
+------------------------------------------------------------------------------
+
+Summary            : Certain oversized vectorisation cases for c66p cause
+		     optimiser crash
+
+Fixed in           : 7.3.1
+Severity           : S2 - Major
+Affected Component : Optimizer
+
+Description: 
+Certain very wide vectorisation cases (so far only for c66p) may cause
+an optimiser crash.  Loops involving operations with one short operand and
+one int operand may trigger the crash.	Loops doing a saturated 
+subtraction of shorts and saving the result in a short may trigger the 
+crash.	In both cases, an UNROLL pragma will work around the problem;  
+
+
+------------------------------------------------------------------------------
+2. 7.3.0 Fixed Code Generation Tools Defects
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00031246
+------------------------------------------------------------------------------
+
+Summary            : Zero length Section allocation problem
+
+Fixed in           : 7.3.0
+Severity           : S3 - Minor
+Affected Component : Linker
+
+Description: 
+A zero length output section in a linker command file that contains the
+dot expression . += 0x0 will cause a linker error
+
+   .trace fill = 0x0 {
+	   _SYS_PUTCBEG = .;
+	   . += 0x0;
+	   _SYS_PUTCEND = . - 1;
+	} > L1SARAM PAGE 1
+
+
+   placement fails for object ".trace", size 0x0 (page 1).  Available
+ranges
+   L1SARAM	size 0x1000	  unused 0x22e	      max hole 0x22c   
+ 
+   error errors encountered during linking;
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040365
+------------------------------------------------------------------------------
+
+Summary            : Mixing direct and indirect accesses to same variable may
+		     give wrong answer
+
+Fixed in           : 7.3.0
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+Referring to the same variable both directly and indirectly -- eg,
+given p[0]=&a, using both *p[0] and a in the same function -- may produce the
+wrong answer when the alias between the two references is missed.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040369
+------------------------------------------------------------------------------
+
+Summary            : Assignment to local struct variable with recurrence may
+		     assign some fields incorrectly
+
+Fixed in           : 7.3.0
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+Given a struct type that contains a pointer to the same type, as in
+
+  struct st {
+      struct st *next;
+      int    val;
+  }
+
+and a local variable X of that type, and an assignment to that variable
+like
+
+  X = *(X.next);
+
+some fields of X may not be written correctly.	(Because X.next is
+written before the read of *(X.next) has completed.)
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040372
+------------------------------------------------------------------------------
+
+Summary            : Variable with volatile inside loop resulted in codegen
+		     INTERNAL ERROR.
+
+Fixed in           : 7.3.0
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040459
+------------------------------------------------------------------------------
+
+Summary            : Division or modulo by most-negative-value of type may
+		     produce incorrect answer
+
+Fixed in           : 7.3.0
+Severity           : S2 - Major
+Affected Component : Optimizer
+
+Description: 
+Division or modulo when the divisor is the most-negative-value of a 
+signed type (eg, -128 for signed-char for C6x) may produce the wrong 
+answer. 
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040487
+------------------------------------------------------------------------------
+
+Summary            : packed attribute given before the member list of a CSU may
+		     produce bad code
+
+Fixed in           : 7.3.0
+Severity           : S3 - Minor
+Affected Component : Parser
+
+Description: 
+A class/union/struct type declared with the packed attribute preceding 
+its member list can result in the generation of incorrect code.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040516
+------------------------------------------------------------------------------
+
+Summary            : Severe performance loss since 6.1.11
+
+Fixed in           : 7.3.0
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+Two codegen optimizations were incorrectly disabled with the switch
+--opt_for_speed=5 during a previous bug fix.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040518
+------------------------------------------------------------------------------
+
+Summary            : Linker fails to impose alignment constraints of a segment's
+		     contents on the segment itself
+
+Fixed in           : 7.3.0
+Severity           : S2 - Major
+Affected Component : ELF Linker
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040623
+------------------------------------------------------------------------------
+
+Summary            : Mixing direct and indirect accesses to same variable may
+		     give wrong answer
+
+Fixed in           : 7.3.0
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+Referring to the same variable both directly and indirectly -- eg,
+given p=&a, using both *p and a in the same function -- may produce the wrong
+answer when the alias between the two references is missed.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040651
+------------------------------------------------------------------------------
+
+Summary            : Return statement with embedded assignment from a
+		     post-increment or -decrement may return wrong value
+
+Fixed in           : 7.3.0
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+A statement like "return j = i++" may return the value of i after it
+has been incremented, when it should return the value before the increment.
+ 
+It's possible that other cases exist, but all will involve an
+assignment of a post-increment or post-decrement embedded in another statement.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040656
+------------------------------------------------------------------------------
+
+Summary            : An initialised local array, used in a loop, may be set up
+		     incorrectly
+
+Fixed in           : 7.3.0
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+A local array variable that is initialised in its definition may be set
+up incorrectly if the array is used within a loop.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040659
+------------------------------------------------------------------------------
+
+Summary            : Mixing direct and indirect accesses to same variable may
+		     give wrong answer
+
+Fixed in           : 7.3.0
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+Referring to the same variable both directly and indirectly -- eg,
+given p=&a, using both *p and a in the same function -- may produce the wrong
+answer when the alias between the two references is missed.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040698
+------------------------------------------------------------------------------
+
+Summary            : Optimiser may crash if given loop nest in which innermost
+		     loop unconditionally returns
+
+Fixed in           : 7.3.0
+Severity           : S2 - Major
+Affected Component : Optimizer
+
+Description: 
+A loop nest with an inner loop that returns unconditionally may cause
+the optimiser to crash.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040730
+------------------------------------------------------------------------------
+
+Summary            : Optimizer terminates abnormally when vectorising _cmpyr1
+
+Fixed in           : 7.3.0
+Severity           : S2 - Major
+Affected Component : Optimizer
+
+Description: 
+Optimiser will crash when vectorising _cmpyr1, because it fumbles an 
+internal cast necessary to match the operands of the vector intrinsic, 
+_dcmpyr1.  Similar problems may exist with _maxu4 going to _dmaxu4 
+and _shru2 to _dshru2, but haven't been demonstrated.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040799
+------------------------------------------------------------------------------
+
+Summary            : C6000_PCR_L16 and C6000_PCR_H16 relocations have the wrong
+		     IDs
+
+Fixed in           : 7.3.0
+Severity           : S3 - Minor
+Affected Component : Assembler
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040837
+------------------------------------------------------------------------------
+
+Summary            : Static initialization of packed double field for a C6X
+		     target causes seg fault
+
+Fixed in           : 7.3.0
+Severity           : S2 - Major
+Affected Component : Code Generator
+
+Description: 
+For C6000 targets, static initialization of a packed double field will
+cause a segmentation fault in the assembly step (asm6x) of a
+compilation.  For example the following code will cause the failure
+
+typedef struct ps {
+   char c;
+   double d;
+} __attribute__((packed)) PS;
+
+PS v = { 'a', 1.0 };
+.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040870
+------------------------------------------------------------------------------
+
+Summary            : Compiler issues "invalid schedule generated" overly
+		     conservative non-fatal error
+
+Fixed in           : 7.3.0
+Severity           : S2 - Major
+Affected Component : Code Generator
+
+Description: 
+In rare cases, the compiler may give a non-fatal error, "Invalid 
+instruction schedule generated".  This error message is usually 
+conservative, meaning that there is actually no problem with the object
+file that was generated by the compiler.  This code that can emit this 
+error message has been altered so that it will be generated less often
+on c67+ and c674x parts.
+
+
+------------------------------------------------------------------------------
+3. 7.3.0B3 Fixed Code Generation Tools Defects
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00039238
+------------------------------------------------------------------------------
+
+Summary            : Accessing variable as both scalar and array may give wrong
+		     answers
+
+Fixed in           : 7.3.0B3
+Severity           : S3 - Minor
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+Accessing a local integer as both a scalar and an array, as in
+
+    uint64_t val  = 0;
+    uint8_t *dest = (uint8_t *)&val;
+
+    for ( ii = 0; ii < sizeof( uint64_t ); ++ii )
+      *dest++ = *src++;
+
+    return val;
+
+which reads and writes val as a uint64_t and also writes to it
+byte-by-byte as a uint8_t, may produce the wrong answer.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00039691
+------------------------------------------------------------------------------
+
+Summary            : The PC range for the lexical block in the debug info is
+		     incorrect
+
+Fixed in           : 7.3.0B3
+Severity           : S2 - Major
+Affected Component : Code Generator
+
+Description: 
+The compiler under certain conditions generates incorrect debug 
+information for local variables. 
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040176
+------------------------------------------------------------------------------
+
+Summary            : Memory accesses may occur out of order
+
+Fixed in           : 7.3.0B3
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+Consecutive memory accesses like
+
+  x[i++]
+  x[i-1]
+
+may occur out of order, if i is not a loop index variable (ie, either
+the accesses are not in a loop or the loop has a different index) and the 
+code is software-pipelined.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040264
+------------------------------------------------------------------------------
+
+Summary            : optimizer reduces WRITE to volatile in a loop to a single
+		     WRITE to volatile after the loop
+
+Fixed in           : 7.3.0B3
+Severity           : S2 - Major
+Affected Component : Optimizer
+
+Description: 
+A volatile access may not be properly handled if the volatile qualifier
+is only present on the field in the definition of a struct, as opposed
+to the struct type as a whole or the variable itself.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040282
+------------------------------------------------------------------------------
+
+Summary            : Triangular loop nest may cause optimiser crash
+
+Fixed in           : 7.3.0B3
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+A loop nest like
+
+  for (i = 0;  i < 7;  i++)
+    for (j = 0;  j <= i;  j++)
+      x += k;
+
+where the inner loop's trip count depends on the outer loop's iteration
+(this is called a triangular loop nest) and the inner loop's body 
+contains an increment of a variable that isn't a loop index, may cause 
+the compiler to crash.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040355
+------------------------------------------------------------------------------
+
+Summary            : Assembler fails to generate a relocation for a call to an
+		     imported function
+
+Fixed in           : 7.3.0B3
+Severity           : S2 - Major
+Affected Component : Assembler
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00040377
+------------------------------------------------------------------------------
+
+Summary            : va_end() at left operand of operator, which is 
+                     passed to return(), resulted in compilation error
+
+Fixed in           : 7.3.0B3
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+The macro va_end should be legal in a void expression context such as
+the left hand operand of the comma operator.  This means the macro needs to
+expand to a void expression rather than be an empty macro.
+
+
+------------------------------------------------------------------------------
+4. 7.3.0B2 Fixed Code Generation Tools Defects
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00039422
+------------------------------------------------------------------------------
+
+Summary            : The intrinsic _ito128 is not handled properly
+
+Fixed in           : 7.3.0B2
+Severity           : S3 - Minor
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+The intrinsic _ito128 is not handled properly when optimization is
+enabled.  This bug can be triggered when there is a paired register move, 
+and the source register and the destination register are overlapped. The end 
+result is one of the source register's content is propagated to several
+other destination registers.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00039960
+------------------------------------------------------------------------------
+
+Summary            : Memory accesses may occur out of order in irreducible
+		     control-flow graph
+
+Fixed in           : 7.3.0B2
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+The problem appears to be the combination of a non-indexed memory
+access in a loop -- p->x as opposed to x[i] -- and an irreducible 
+control-flow graph.
+
+The non-indexed memory access has a data dependence across iterations
+in both directions;  the write must come after the current iteration's
+read, and it must also come before the next iteration's read.  We get
+the write-after-read dependence but don't produce the read-after-write.
+
+Whether that causes a problem depends strongly on context.  Only inner
+loops are pipelined, so outer-loop situations are probably safe.  The
+inner loop has to pipeline in a particular way, so some will work and
+some won't.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00039973
+------------------------------------------------------------------------------
+
+Summary            : DCMPY or DCCMPY instrs incorrectly scheduled to write to M
+		     unit at same time as 2-cycle multiply
+		     instruction
+
+Fixed in           : 7.3.0B2
+Severity           : S2 - Major
+Affected Component : Code Generator
+
+Description: 
+In certain cases, the compiler may schedule code that causes a write
+port conflict on C6600 devices.  In this particular case, the compiler may 
+schedule the DCMPY or DCCMPY instruction such that a 2-cycle multiply 
+instruction is trying to write to the register file at the same time.  
+Since, on C6600, there are only two 64-bit write buses to the register 
+file, one write will not be successful.
+
+------------------------------------------------------------------------------
+FIXED  SDSCM00039981
+------------------------------------------------------------------------------
+
+Summary            : Compiler incorrectly generating LDDW when it should be
+		     generating LDNDW from a _mem8
+
+Fixed in           : 7.3.0B2
+Severity           : S2 - Major
+Affected Component : Optimizer
+
+Description: 
+An unaligned access in a loop may be incorrectly vectorised in a way
+that creates an aligned access.  So far this has only been observed for
+_mem8 and c66;  it's theoretically possible also for _mem4, and for c674,
+c64p, and c64, but we haven't been able to create an example.
+
+
+------------------------------------------------------------------------------
+5. Current Known Issues
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+KNOWN ISSUE  SDSCM00040934
+------------------------------------------------------------------------------
+
+Summary            : Structure is not initialized correctly when using -o2 or
+		     -o3 optimization
+Affected Component : Optimizer
+
+Description: 
+There is a problem with the initialization of a structure using symbols
+generated in the linker command file. 
+
+------------------------------------------------------------------------------
+KNOWN ISSUE  SDSCM00041042
+------------------------------------------------------------------------------
+
+Summary            : Compiler produces incorrect result when compiled for -o2
+		     and higher
+Affected Component : Optimizer
+
+------------------------------------------------------------------------------
+KNOWN ISSUE  SDSCM00041433
+------------------------------------------------------------------------------
+
+Summary            : Linker fails to automatically GROUP DP-related data
+		     sections under EABI
+Affected Component : ELF Linker
+
+Description: 
+The ELF linker is not automatically generating the Group section for
+the .bss, .neardata, and .fardata sections.  It would be expected that
+there would at least be a warning. 
+
+------------------------------------------------------------------------------
+KNOWN ISSUE  SDSCM00041434
+------------------------------------------------------------------------------
+
+Summary            : Compiler optimizes away calls to assert without reason
+Affected Component : Absolute Lister
+
+Description: 
+In certain instances, the compiler incorrectly removes a call to the
+assert function.
+
+------------------------------------------------------------------------------
+KNOWN ISSUE  SDSCM00041468
+------------------------------------------------------------------------------
+
+Summary            : When linker is invoked with --abi=ebai and the linker opens
+		     a COFF library, it should issue a diagnostic
+Affected Component : Linker
+
+------------------------------------------------------------------------------
+KNOWN ISSUE  SDSCM00041595
+------------------------------------------------------------------------------
+
+Summary            : Compiler produces incorrect result at -o2 for C64x
+Affected Component : C/C++ Compiler (cl)
+
+------------------------------------------------------------------------------
+KNOWN ISSUE  SDSCM00041883
+------------------------------------------------------------------------------
+
+Summary            : On C6600, interrupt in _push_rts could cause stack to be 
+                     not aligned to 16-bytes as required
+Affected Component : Runtime Intrinsics
+
+------------------------------------------------------------------------------
+KNOWN ISSUE  SDSCM00041888
+------------------------------------------------------------------------------
+
+Summary            : Compiler incorrectly exposes static function as global,
+		     when building with optimization and EABI
+Affected Component : C/C++ Compiler (cl)
+
+Description: 
+One optimization undertaken under EABI is, when a function named
+"parent" does nothing but call a function named "child", then all uses
+of the symbol "parent" are replaced with "child".  This should not
+occur if "parent" is static function.  But it does.
+

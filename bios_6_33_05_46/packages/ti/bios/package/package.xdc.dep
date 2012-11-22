@@ -1,0 +1,158 @@
+clean::
+	$(RM) package/ti.bios.sch
+	$(RM) package/.vers_g180
+	$(RM) package/.vers_r170
+	$(RM) package/.vers_b150
+	$(RM) package/.xdc-y25
+	$(RM) package/ti_bios.java
+	$(RM) package/ti_bios.class
+	$(RM) package/package_ti.bios.c
+	$(RM) package/package.defs.h
+	$(RM) package/ti.bios.ccs
+
+.interfaces: package/ti.bios.sch package/.vers_g180 package/.vers_r170 package/.vers_b150 package/.xdc-y25 package/ti_bios.java package/package_ti.bios.c package/package.defs.h package/ti.bios.ccs 
+package/package.xdc.inc: package/.vers_g180
+package/.vers_g180:
+package/package.xdc.inc: package/.vers_r170
+package/.vers_r170:
+package/package.xdc.inc: package/.vers_b150
+package/.vers_b150:
+
+.interfaces: SYS.xdc LOG.xdc MEM.xdc TSK.xdc CLK.xdc SEM.xdc SWI.xdc IDL.xdc MBX.xdc STS.xdc QUE.xdc PRD.xdc HWI.xdc PIE.xdc BUF.xdc LCK.xdc HOOK.xdc GBL.xdc HST.xdc PIP.xdc RTDX.xdc ECM.xdc DEV.xdc DGN.xdc DHL.xdc DPI.xdc DIO.xdc GIO.xdc SIO.xdc UDEV.xdc MSGQ.xdc POOL.xdc STATICPOOL.xdc 
+
+# schema include file dependencies
+package.xs:
+package/package.xdc.inc: package.xs
+SYS.xs:
+package/package.xdc.inc: SYS.xs
+LOG.xs:
+package/package.xdc.inc: LOG.xs
+MEM.xs:
+package/package.xdc.inc: MEM.xs
+TSK.xs:
+package/package.xdc.inc: TSK.xs
+CLK.xs:
+package/package.xdc.inc: CLK.xs
+SEM.xs:
+package/package.xdc.inc: SEM.xs
+SWI.xs:
+package/package.xdc.inc: SWI.xs
+IDL.xs:
+package/package.xdc.inc: IDL.xs
+MBX.xs:
+package/package.xdc.inc: MBX.xs
+STS.xs:
+package/package.xdc.inc: STS.xs
+QUE.xs:
+package/package.xdc.inc: QUE.xs
+PRD.xs:
+package/package.xdc.inc: PRD.xs
+HWI.xs:
+package/package.xdc.inc: HWI.xs
+PIE.xs:
+package/package.xdc.inc: PIE.xs
+BUF.xs:
+package/package.xdc.inc: BUF.xs
+LCK.xs:
+package/package.xdc.inc: LCK.xs
+HOOK.xs:
+package/package.xdc.inc: HOOK.xs
+GBL.xs:
+package/package.xdc.inc: GBL.xs
+HST.xs:
+package/package.xdc.inc: HST.xs
+PIP.xs:
+package/package.xdc.inc: PIP.xs
+RTDX.xs:
+package/package.xdc.inc: RTDX.xs
+ECM.xs:
+package/package.xdc.inc: ECM.xs
+DEV.xs:
+package/package.xdc.inc: DEV.xs
+DGN.xs:
+package/package.xdc.inc: DGN.xs
+DHL.xs:
+package/package.xdc.inc: DHL.xs
+DPI.xs:
+package/package.xdc.inc: DPI.xs
+DIO.xs:
+package/package.xdc.inc: DIO.xs
+GIO.xs:
+package/package.xdc.inc: GIO.xs
+SIO.xs:
+package/package.xdc.inc: SIO.xs
+UDEV.xs:
+package/package.xdc.inc: UDEV.xs
+MSGQ.xs:
+package/package.xdc.inc: MSGQ.xs
+POOL.xs:
+package/package.xdc.inc: POOL.xs
+STATICPOOL.xs:
+package/package.xdc.inc: STATICPOOL.xs
+
+# schema update dependencies
+package/package.xdc.inc: SYS.xdc
+package/package.xdc.inc: LOG.xdc
+package/package.xdc.inc: MEM.xdc
+package/package.xdc.inc: TSK.xdc
+package/package.xdc.inc: CLK.xdc
+package/package.xdc.inc: SEM.xdc
+package/package.xdc.inc: SWI.xdc
+package/package.xdc.inc: IDL.xdc
+package/package.xdc.inc: MBX.xdc
+package/package.xdc.inc: STS.xdc
+package/package.xdc.inc: QUE.xdc
+package/package.xdc.inc: PRD.xdc
+package/package.xdc.inc: HWI.xdc
+package/package.xdc.inc: PIE.xdc
+package/package.xdc.inc: BUF.xdc
+package/package.xdc.inc: LCK.xdc
+package/package.xdc.inc: HOOK.xdc
+package/package.xdc.inc: GBL.xdc
+package/package.xdc.inc: HST.xdc
+package/package.xdc.inc: PIP.xdc
+package/package.xdc.inc: RTDX.xdc
+package/package.xdc.inc: ECM.xdc
+package/package.xdc.inc: DEV.xdc
+package/package.xdc.inc: DGN.xdc
+package/package.xdc.inc: DHL.xdc
+package/package.xdc.inc: DPI.xdc
+package/package.xdc.inc: DIO.xdc
+package/package.xdc.inc: GIO.xdc
+package/package.xdc.inc: SIO.xdc
+package/package.xdc.inc: UDEV.xdc
+package/package.xdc.inc: MSGQ.xdc
+package/package.xdc.inc: POOL.xdc
+package/package.xdc.inc: STATICPOOL.xdc
+package/package.xdc.inc: xdc/IPackage.xdc
+xdc/IPackage.xdc:
+vpath xdc/IPackage.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/heaps/HeapMem.xdc
+ti/sysbios/heaps/HeapMem.xdc:
+vpath ti/sysbios/heaps/HeapMem.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/runtime/Assert.xdc
+xdc/runtime/Assert.xdc:
+vpath xdc/runtime/Assert.xdc $(XPKGVPATH)
+
+ifneq (clean,$(MAKECMDGOALS))
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/global/java/package.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/global/java/package.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/ecj.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/ecj.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/intern/gen/java/package.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/intern/gen/java/package.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/antlr.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/antlr.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/intern/xsr/java/package.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/intern/xsr/java/package.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/tar.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/tar.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/spec/java/package.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/spec/java/package.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/intern/cmd/java/package.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/services/intern/cmd/java/package.jar
+/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/js.jar:
+package/package.xdc.inc: /swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/component-sources/xdctools_3_23_03_53/packages/xdc/shelf/java/js.jar
+endif
+# goals for files generated during schema generation but unspecified by schema's pattern rule
+

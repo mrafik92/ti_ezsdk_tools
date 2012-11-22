@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ipc.transports" version="1, 0, 0, 0" producerId="undefined">
+    <units>
+        <module name="TransportShm"/>
+        <module name="TransportShmSetup"/>
+        <module name="TransportShmCirc"/>
+        <module name="TransportShmCircSetup"/>
+        <module name="TransportShmNotify"/>
+        <module name="TransportShmNotifySetup"/>
+        <module name="TransportNullSetup"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.sdo.ipc.transports.c"/>
+        <srcFile name="TransportShm.c"/>
+        <srcFile name="TransportShmSetup.c"/>
+        <srcFile name="TransportShmCirc.c"/>
+        <srcFile name="TransportShmCircSetup.c"/>
+        <srcFile name="TransportShmNotify.c"/>
+        <srcFile name="TransportShmNotifySetup.c"/>
+        <srcFile name="TransportNullSetup.c"/>
+    </sources>
+    <configscripts>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/debug/ti.sdo.ipc.transports.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc.transports/package/package_ti.sdo.ipc.transports.oem3.dep" src="package/package_ti.sdo.ipc.transports.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc.transports/TransportShm.oem3.dep" src="TransportShm.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc.transports/TransportShmSetup.oem3.dep" src="TransportShmSetup.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc.transports/TransportShmCirc.oem3.dep" src="TransportShmCirc.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc.transports/TransportShmCircSetup.oem3.dep" src="TransportShmCircSetup.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc.transports/TransportShmNotify.oem3.dep" src="TransportShmNotify.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc.transports/TransportShmNotifySetup.oem3.dep" src="TransportShmNotifySetup.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc.transports/TransportNullSetup.oem3.dep" src="TransportNullSetup.c"/>
+        <srcFile name="lib/debug/ti.sdo.ipc.transports.ae674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc.transports/package/package_ti.sdo.ipc.transports.oe674.dep" src="package/package_ti.sdo.ipc.transports.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc.transports/TransportShm.oe674.dep" src="TransportShm.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc.transports/TransportShmSetup.oe674.dep" src="TransportShmSetup.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc.transports/TransportShmCirc.oe674.dep" src="TransportShmCirc.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc.transports/TransportShmCircSetup.oe674.dep" src="TransportShmCircSetup.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc.transports/TransportShmNotify.oe674.dep" src="TransportShmNotify.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc.transports/TransportShmNotifySetup.oe674.dep" src="TransportShmNotifySetup.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc.transports/TransportNullSetup.oe674.dep" src="TransportNullSetup.c"/>
+        <srcFile name="package/rel/ti_sdo_ipc_transports.tar.dep" src="package/rel/ti_sdo_ipc_transports.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.arm.elf.M3"
+            version="ti.targets.arm.elf.M3{1,0,4.9,2"
+            platform="ti.platforms.simDM8168"
+            isa="v7M"
+            suffix="em3"
+            rootDir="/proj/productization/tools/cgt470/cgt470_4_9_2/"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.elf.C674"
+            version="ti.targets.elf.C674{1,0,7.3,1"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="e674"
+            rootDir="/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/dsp-devkit/cgt6x_7_3_1"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/debug/ti.sdo.ipc.transports"
+        pname="lib/debug/ti.sdo.ipc.transports.aem3"
+        profile="debug"
+        target="ti.targets.arm.elf.M3"/>
+    <library name="lib/debug/ti.sdo.ipc.transports"
+        pname="lib/debug/ti.sdo.ipc.transports.ae674"
+        profile="debug"
+        target="ti.targets.elf.C674"/>
+    </libraries>
+    <configurations>
+    </configurations>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ipc_transports"
+        pname="ti_sdo_ipc_transports.tar"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.rel.dot"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package.bld"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/debug/ti.sdo.ipc.transports.aem3"/>
+        <file name="package/package_ti.sdo.ipc.transports.c"/>
+        <file name="TransportShm.c"/>
+        <file name="TransportShmSetup.c"/>
+        <file name="TransportShmCirc.c"/>
+        <file name="TransportShmCircSetup.c"/>
+        <file name="TransportShmNotify.c"/>
+        <file name="TransportShmNotifySetup.c"/>
+        <file name="TransportNullSetup.c"/>
+        <file name="lib/debug/ti.sdo.ipc.transports.ae674"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

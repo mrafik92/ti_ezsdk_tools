@@ -1,0 +1,12 @@
+package/package.bld.xml
+package/package.ext.xml
+package/package.rel.dot
+package/build.cfg
+package/package.xdc.inc
+package.bld
+linkcmd.xdt
+Hwi_link.xdt
+doc-files
+armSettings.xs
+Settings.xml
+package/package.cfg.xdc.inc

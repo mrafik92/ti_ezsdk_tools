@@ -1,0 +1,21 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+[Project Settings]
+ProjectName="ti.sysbios.family.c674.pmi"
+ProjectType=External
+CPUFamily=TMS320C67XX
+Tool="CustomBuilder"
+Config="Package"
+[Source Files]
+Source="../package/package_ti.sysbios.family.c674.pmi.c"
+Source="../pmi_ms.c"
+Source="../pmi_init.c"
+Source="../pmi_pll.c"
+Source="../pmi_slp.c"
+Source="../pmi_idle.s64P"
+Source="../pmi_onchip.s64P"
+Source="../pmi_relock1.c"
+Source="../pmi_i2c.c"
+Source="../pmi_volt6748evm.c"
+Source="../pmi_shared_volt6748evm.c"
+Source="../pmi_voltnull13.c"
+Source="../pmi_voltnull.c"

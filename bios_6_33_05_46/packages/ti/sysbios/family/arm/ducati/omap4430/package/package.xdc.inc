@@ -1,0 +1,16 @@
+package.xdc
+package.xs
+Power.xdc
+Power.xs
+package/ti.sysbios.family.arm.ducati.omap4430.sch
+package/.vers_g180
+package/.vers_r170
+package/.vers_b150
+package/.xdc-y25
+package/ti_sysbios_family_arm_ducati_omap4430.java
+package/ti_sysbios_family_arm_ducati_omap4430.class
+package/package_ti.sysbios.family.arm.ducati.omap4430.c
+package/package.defs.h
+Power.h
+package/internal/Power.xdc.h
+package/ti.sysbios.family.arm.ducati.omap4430.ccs

@@ -1,0 +1,12 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+[Project Settings]
+ProjectName="ti.sdo.ipc.family.da830"
+ProjectType=External
+CPUFamily=TMS320C67XX
+Tool="CustomBuilder"
+Config="Package"
+[Source Files]
+Source="../package/package_ti.sdo.ipc.family.da830.c"
+Source="../InterruptDsp.c"
+Source="../NotifySetup.c"
+Source="../NotifyCircSetup.c"

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ipc" version="1, 0, 0, 0" producerId="undefined">
+    <units>
+        <module name="Build"/>
+        <module name="GateMP"/>
+        <module name="MessageQ"/>
+        <module name="SharedRegion"/>
+        <module name="ListMP"/>
+        <module name="Ipc"/>
+        <module name="Notify"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.sdo.ipc.c"/>
+        <srcFile name="Notify.c"/>
+        <srcFile name="GateMP.c"/>
+        <srcFile name="Ipc.c"/>
+        <srcFile name="MessageQ.c"/>
+        <srcFile name="SharedRegion.c"/>
+        <srcFile name="ListMP.c"/>
+        <srcFile name="package/cfg/instrumented_pem3.c"/>
+        <srcFile name="package/cfg/nonInstrumented_pem3.c"/>
+        <srcFile name="package/cfg/instrumented_pe674.c"/>
+        <srcFile name="package/cfg/nonInstrumented_pe674.c"/>
+    </sources>
+    <configscripts>
+        <srcFile name="instrumented.cfg"/>
+        <srcFile name="nonInstrumented.cfg"/>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/debug/ti.sdo.ipc.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc/package/package_ti.sdo.ipc.oem3.dep" src="package/package_ti.sdo.ipc.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc/Notify.oem3.dep" src="Notify.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc/GateMP.oem3.dep" src="GateMP.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc/Ipc.oem3.dep" src="Ipc.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc/MessageQ.oem3.dep" src="MessageQ.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc/SharedRegion.oem3.dep" src="SharedRegion.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc/ListMP.oem3.dep" src="ListMP.c"/>
+        <srcFile name="lib/debug/ti.sdo.ipc.ae674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc/package/package_ti.sdo.ipc.oe674.dep" src="package/package_ti.sdo.ipc.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc/Notify.oe674.dep" src="Notify.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc/GateMP.oe674.dep" src="GateMP.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc/Ipc.oe674.dep" src="Ipc.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc/MessageQ.oe674.dep" src="MessageQ.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc/SharedRegion.oe674.dep" src="SharedRegion.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sdo.ipc/ListMP.oe674.dep" src="ListMP.c"/>
+        <srcFile name="package/cfg/instrumented_pem3.mak" src="package.bld"/>
+        <srcFile name="package/cfg/instrumented_pem3.oem3.dep" src="package/cfg/instrumented_pem3.c"/>
+        <srcFile name="package/cfg/instrumented_pem3.dep" src="package/cfg/instrumented_pem3.cfg"/>
+        <srcFile name="package/cfg/nonInstrumented_pem3.mak" src="package.bld"/>
+        <srcFile name="package/cfg/nonInstrumented_pem3.oem3.dep" src="package/cfg/nonInstrumented_pem3.c"/>
+        <srcFile name="package/cfg/nonInstrumented_pem3.dep" src="package/cfg/nonInstrumented_pem3.cfg"/>
+        <srcFile name="package/cfg/instrumented_pe674.mak" src="package.bld"/>
+        <srcFile name="package/cfg/instrumented_pe674.oe674.dep" src="package/cfg/instrumented_pe674.c"/>
+        <srcFile name="package/cfg/instrumented_pe674.dep" src="package/cfg/instrumented_pe674.cfg"/>
+        <srcFile name="package/cfg/nonInstrumented_pe674.mak" src="package.bld"/>
+        <srcFile name="package/cfg/nonInstrumented_pe674.oe674.dep" src="package/cfg/nonInstrumented_pe674.c"/>
+        <srcFile name="package/cfg/nonInstrumented_pe674.dep" src="package/cfg/nonInstrumented_pe674.cfg"/>
+        <srcFile name="package/rel/ti_sdo_ipc.tar.dep" src="package/rel/ti_sdo_ipc.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.arm.elf.M3"
+            version="ti.targets.arm.elf.M3{1,0,4.9,2"
+            platform="ti.platforms.simDM8168"
+            isa="v7M"
+            suffix="em3"
+            rootDir="/proj/productization/tools/cgt470/cgt470_4_9_2/"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.elf.C674"
+            version="ti.targets.elf.C674{1,0,7.3,1"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="e674"
+            rootDir="/swcoe/sdk/cm/netra/ti-ezsdk_dm816x-evm_5_05_01_04/dsp-devkit/cgt6x_7_3_1"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/debug/ti.sdo.ipc"
+        pname="lib/debug/ti.sdo.ipc.aem3"
+        profile="debug"
+        target="ti.targets.arm.elf.M3"/>
+    <library name="lib/debug/ti.sdo.ipc"
+        pname="lib/debug/ti.sdo.ipc.ae674"
+        profile="debug"
+        target="ti.targets.elf.C674"/>
+    </libraries>
+    <configurations>
+    <configuration name="instrumented"
+        pname="instrumented.pem3"
+        target="ti.targets.arm.elf.M3"
+        platform="ti.platforms.simDM8168"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/instrumented_pem3.cfg"
+        xCfgPrefix="package/cfg/instrumented_pem3"
+        cfgScript="instrumented.cfg"
+        />
+    <configuration name="nonInstrumented"
+        pname="nonInstrumented.pem3"
+        target="ti.targets.arm.elf.M3"
+        platform="ti.platforms.simDM8168"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/nonInstrumented_pem3.cfg"
+        xCfgPrefix="package/cfg/nonInstrumented_pem3"
+        cfgScript="nonInstrumented.cfg"
+        />
+    <configuration name="instrumented"
+        pname="instrumented.pe674"
+        target="ti.targets.elf.C674"
+        platform="ti.platforms.evmDA830"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/instrumented_pe674.cfg"
+        xCfgPrefix="package/cfg/instrumented_pe674"
+        cfgScript="instrumented.cfg"
+        />
+    <configuration name="nonInstrumented"
+        pname="nonInstrumented.pe674"
+        target="ti.targets.elf.C674"
+        platform="ti.platforms.evmDA830"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/nonInstrumented_pe674.cfg"
+        xCfgPrefix="package/cfg/nonInstrumented_pe674"
+        cfgScript="nonInstrumented.cfg"
+        />
+    </configurations>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ipc"
+        pname="ti_sdo_ipc.tar"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.rel.dot"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package.bld"/>
+        <file name="linkcmd.xdt"/>
+        <file name="_GateMP.h"/>
+        <file name="_ListMP.h"/>
+        <file name="_Notify.h"/>
+        <file name="_MessageQ.h"/>
+        <file name="_SharedRegion.h"/>
+        <file name="_Ipc.h"/>
+        <file name="Ipc.c"/>
+        <file name="makefile.xdt"/>
+        <file name="instrumented.cfg"/>
+        <file name="nonInstrumented.cfg"/>
+        <file name="lib/instrumented_em3/ipc/ipc.lib"/>
+        <file name="lib/nonInstrumented_em3/ipc/ipc.lib"/>
+        <file name="lib/instrumented_e674/ipc/ipc.lib"/>
+        <file name="lib/nonInstrumented_e674/ipc/ipc.lib"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/debug/ti.sdo.ipc.aem3"/>
+        <file name="package/package_ti.sdo.ipc.c"/>
+        <file name="Notify.c"/>
+        <file name="GateMP.c"/>
+        <file name="MessageQ.c"/>
+        <file name="SharedRegion.c"/>
+        <file name="ListMP.c"/>
+        <file name="lib/debug/ti.sdo.ipc.ae674"/>
+        <file name="package/cfg/instrumented_pem3.xdc.inc"/>
+        <file name="package/cfg/instrumented_pem3.cfg"/>
+        <file name="package/cfg/instrumented_pem3.c"/>
+        <file name="package/cfg/nonInstrumented_pem3.xdc.inc"/>
+        <file name="package/cfg/nonInstrumented_pem3.cfg"/>
+        <file name="package/cfg/nonInstrumented_pem3.c"/>
+        <file name="package/cfg/instrumented_pe674.xdc.inc"/>
+        <file name="package/cfg/instrumented_pe674.cfg"/>
+        <file name="package/cfg/instrumented_pe674.c"/>
+        <file name="package/cfg/nonInstrumented_pe674.xdc.inc"/>
+        <file name="package/cfg/nonInstrumented_pe674.cfg"/>
+        <file name="package/cfg/nonInstrumented_pe674.c"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

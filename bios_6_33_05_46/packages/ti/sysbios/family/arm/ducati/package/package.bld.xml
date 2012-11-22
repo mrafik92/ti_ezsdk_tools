@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sysbios.family.arm.ducati" version="2, 0, 0, 0" producerId="undefined">
+    <units>
+        <module name="Core"/>
+        <module name="CTM"/>
+        <module name="GateDualCore"/>
+        <module name="Timer"/>
+        <module name="TimerSupport"/>
+        <module name="TimestampProvider"/>
+        <module name="Wugen"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.sysbios.family.arm.ducati.c"/>
+        <srcFile name="Core.c"/>
+        <srcFile name="Core_asm.sv7M"/>
+        <srcFile name="CTM_asm.sv7M"/>
+        <srcFile name="GateDualCore.c"/>
+        <srcFile name="Timer.c"/>
+        <srcFile name="TimerSupport.c"/>
+        <srcFile name="TimestampProvider.c"/>
+        <srcFile name="Wugen.c"/>
+    </sources>
+    <configscripts>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/debug/ti.sysbios.family.arm.ducati.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ti.sysbios.family.arm.ducati/package/package_ti.sysbios.family.arm.ducati.oem3.dep" src="package/package_ti.sysbios.family.arm.ducati.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sysbios.family.arm.ducati/Core.oem3.dep" src="Core.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sysbios.family.arm.ducati/Core_asm.oem3.dep" src="Core_asm.sv7M"/>
+        <srcFile name="package/lib/lib/debug/ti.sysbios.family.arm.ducati/CTM_asm.oem3.dep" src="CTM_asm.sv7M"/>
+        <srcFile name="package/lib/lib/debug/ti.sysbios.family.arm.ducati/GateDualCore.oem3.dep" src="GateDualCore.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sysbios.family.arm.ducati/Timer.oem3.dep" src="Timer.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sysbios.family.arm.ducati/TimerSupport.oem3.dep" src="TimerSupport.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sysbios.family.arm.ducati/TimestampProvider.oem3.dep" src="TimestampProvider.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sysbios.family.arm.ducati/Wugen.oem3.dep" src="Wugen.c"/>
+        <srcFile name="package/rel/ti_sysbios_family_arm_ducati.tar.dep" src="package/rel/ti_sysbios_family_arm_ducati.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.arm.elf.M3"
+            version="ti.targets.arm.elf.M3{1,0,4.9,2"
+            platform="ti.platforms.simDM8168"
+            isa="v7M"
+            suffix="em3"
+            rootDir="/proj/productization/tools/cgt470/cgt470_4_9_2/"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/debug/ti.sysbios.family.arm.ducati"
+        pname="lib/debug/ti.sysbios.family.arm.ducati.aem3"
+        profile="debug"
+        target="ti.targets.arm.elf.M3"/>
+    </libraries>
+    <configurations>
+    </configurations>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sysbios_family_arm_ducati"
+        pname="ti_sysbios_family_arm_ducati.tar"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.rel.dot"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package.bld"/>
+        <file name="Core__prologue.h"/>
+        <file name="Core__epilogue.h"/>
+        <file name="ducati_m3_rom_table.gel"/>
+        <file name="tisim_init_ducati_1.gel"/>
+        <file name="tisim_init_iss_1.gel"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/debug/ti.sysbios.family.arm.ducati.aem3"/>
+        <file name="package/package_ti.sysbios.family.arm.ducati.c"/>
+        <file name="Core.c"/>
+        <file name="Core_asm.sv7M"/>
+        <file name="CTM_asm.sv7M"/>
+        <file name="GateDualCore.c"/>
+        <file name="Timer.c"/>
+        <file name="TimerSupport.c"/>
+        <file name="TimestampProvider.c"/>
+        <file name="Wugen.c"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

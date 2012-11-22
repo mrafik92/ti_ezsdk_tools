@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sysbios.family.arm.ducati.dm8148" version="2, 0, 0, 0" producerId="undefined">
+    <units>
+        <module name="IntMux"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.sysbios.family.arm.ducati.dm8148.c"/>
+        <srcFile name="IntMux.c"/>
+    </sources>
+    <configscripts>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/debug/ti.sysbios.family.arm.ducati.dm8148.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ti.sysbios.family.arm.ducati.dm8148/package/package_ti.sysbios.family.arm.ducati.dm8148.oem3.dep" src="package/package_ti.sysbios.family.arm.ducati.dm8148.c"/>
+        <srcFile name="package/lib/lib/debug/ti.sysbios.family.arm.ducati.dm8148/IntMux.oem3.dep" src="IntMux.c"/>
+        <srcFile name="package/rel/ti_sysbios_family_arm_ducati_dm8148.tar.dep" src="package/rel/ti_sysbios_family_arm_ducati_dm8148.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.arm.elf.M3"
+            version="ti.targets.arm.elf.M3{1,0,4.9,2"
+            platform="ti.platforms.simDM8168"
+            isa="v7M"
+            suffix="em3"
+            rootDir="/proj/productization/tools/cgt470/cgt470_4_9_2/"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/debug/ti.sysbios.family.arm.ducati.dm8148"
+        pname="lib/debug/ti.sysbios.family.arm.ducati.dm8148.aem3"
+        profile="debug"
+        target="ti.targets.arm.elf.M3"/>
+    </libraries>
+    <configurations>
+    </configurations>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sysbios_family_arm_ducati_dm8148"
+        pname="ti_sysbios_family_arm_ducati_dm8148.tar"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.rel.dot"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package.bld"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/debug/ti.sysbios.family.arm.ducati.dm8148.aem3"/>
+        <file name="package/package_ti.sysbios.family.arm.ducati.dm8148.c"/>
+        <file name="IntMux.c"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

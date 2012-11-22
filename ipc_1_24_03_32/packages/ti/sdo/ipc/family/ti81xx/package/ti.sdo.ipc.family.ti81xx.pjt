@@ -1,0 +1,15 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+[Project Settings]
+ProjectName="ti.sdo.ipc.family.ti81xx"
+ProjectType=External
+CPUFamily=TMS320C67XX
+Tool="CustomBuilder"
+Config="Package"
+[Source Files]
+Source="../package/package_ti.sdo.ipc.family.ti81xx.c"
+Source="../InterruptDsp.c"
+Source="../NotifySetup.c"
+Source="../NotifyCircSetup.c"
+Source="../NotifyMbxSetup.c"
+Source="../NotifyDriverMbx.c"
+Source="../InterruptDucati.c"

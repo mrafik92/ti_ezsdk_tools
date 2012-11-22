@@ -1,0 +1,6 @@
+package/lib/lib/release/pmiLib_evm6748/pmi_i2c.oe674: pmi_i2c.c ../../../../../ti/sysbios/family/c674/pmi.h ./pmi_i2cdefs.h ./pmi_i2cfxns.h pmi_defs6748.h 
+pmi_i2c.c:
+../../../../../ti/sysbios/family/c674/pmi.h:
+./pmi_i2cdefs.h:
+./pmi_i2cfxns.h:
+pmi_defs6748.h:

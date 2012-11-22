@@ -1,0 +1,15 @@
+package/package.bld.xml
+package/package.ext.xml
+package/package.rel.dot
+package/build.cfg
+package/package.xdc.inc
+package.bld
+doc-files
+Power.xml
+Settings.xml
+TimestampProvider.xml
+Hwi.xml
+TaskSupport.xml
+Timer.xml
+ClockFreqs.xml
+package/package.cfg.xdc.inc
